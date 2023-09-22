@@ -5,9 +5,11 @@ import React, { useState } from 'react';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [college , setCollege] = useState("")
 
-  const handleForm = (userData) =>{
-   setUsers([...users ,userData ])
+  const handleForm = (userData , Enteredcollege) =>{
+   setUsers([...users ,userData])
+   setCollege(Enteredcollege)
   }
   return (
     <div className="App">
@@ -18,7 +20,7 @@ function App() {
         <ul>
           {users.map((user, index) => (
             <li key={index}>
-              Username: {user.username}, Age: {user.age}
+              Username: {user.username}, Age: {user.age} , college : {college}
             </li>
           ))}
         </ul>
